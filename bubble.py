@@ -2,31 +2,25 @@
 # them one by one again.  Takes as long as it takes.  Is O(n^2) complexity
 
 import unittest
-import itertools
 
 def bubble(in_string):
 
     lo = []
     for i in in_string:
         lo.append(int(i))
-    j = 0
+    i = 0 # using i again as index convention
 
-    while j < len(lo):
-        if lo[j] > lo[j+1]:
-            smaller = lo[j+1]
-            bigger = lo[j]
-            lo[j] = smaller
-            lo[j+1] = bigger # need to conditional this one out
-        j += 1
+    while i < len(lo):
+        if lo[i+1] == len(lo):
+            break
+        if lo[i] > lo[i+1]:
+            smaller = lo[i+1]
+            bigger = lo[i]
+            lo[i] = smaller
+            lo[i+1] = bigger
         print lo
+        i += 1
 
-#        if j == lo[-1]: # this is a check to see if we're at the end of the list
-#            return lo
-#        if lo[j] <= lo[j+1]:
-#            pass
-#        elif lo[j] > lo[j+1]:
-#            lo[j+1] = lo[j]
-
-bubble('63782541')
+bubble('63752841')
 
 # do tests outside this file to test speed
