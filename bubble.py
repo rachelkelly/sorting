@@ -9,17 +9,26 @@ def bubble(in_string):
     for i in in_string:
         lo.append(int(i))
     i = 0 # using i again as index convention
+    goodness_counter = 0
+    p = 0 # part of a bad solution haha
 
-    while i < len(lo):
-        if lo[i+1] == len(lo):
-            break
-        if lo[i] > lo[i+1]:
-            smaller = lo[i+1]
-            bigger = lo[i]
-            lo[i] = smaller
-            lo[i+1] = bigger
-        print lo
-        i += 1
+    while p == 0: # haha whoa
+        while i < len(lo):
+            if lo[i+1] == len(lo):
+                break
+            if lo[i] <= lo[i+1]:
+                goodness_counter += 1
+                if goodness_counter == len(lo):
+                    print lo
+                    p = 1
+                    return True
+            elif lo[i] > lo[i+1]:
+                smaller = lo[i+1]
+                bigger = lo[i]
+                lo[i] = smaller
+                lo[i+1] = bigger
+            print lo
+            i += 1
 
 bubble('63752841')
 
