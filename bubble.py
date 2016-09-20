@@ -8,20 +8,20 @@ def bubble(in_string):
     lo = []
     for i in in_string:
         lo.append(int(i))
-    goodness_counter = 0 # if comparison doesn't need to be made, ticks up
+    goodness = 0 # if comparison doesn't need to be made, ticks up
     badness_counter = 0 # counts number of full loops needed
-    p = 0 # part of a bad solution haha
 
-    while p == 0: # haha whoa
+    while goodness < len(lo):
         i = 0
         #goodness_counter = 0 # haha crap, putting it here makes it asplode
         while i < len(lo):
-            if lo[i+1] == len(lo):
+            goodness = 0 # to reset it every time
+            if i+1 == len(lo):
                 break
             if lo[i] <= lo[i+1]:
-                goodness_counter += 1
-                if goodness_counter == len(lo):
-                    print lo
+                goodness += 1
+                if goodness == len(lo):
+                    print "inner lo: %d" %lo
                     #p = 1
                     return True # may not need to reset val of p
             elif lo[i] > lo[i+1]:
@@ -29,9 +29,10 @@ def bubble(in_string):
                 bigger = lo[i]
                 lo[i] = smaller
                 lo[i+1] = bigger
-            print lo
             i += 1
             badness_counter += 1
+            print "outer lo and # of loops" 
+            print lo, badness_counter
 
 bubble('63752841')
 
