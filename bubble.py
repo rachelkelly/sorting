@@ -8,11 +8,11 @@ def bubble(in_string):
     lo = []
     for i in in_string:
         lo.append(int(i))
-    i = 0 # using i again as index convention
     goodness_counter = 0
     p = 0 # part of a bad solution haha
 
     while p == 0: # haha whoa
+        i = 0
         while i < len(lo):
             if lo[i+1] == len(lo):
                 break
