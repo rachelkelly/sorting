@@ -13,6 +13,7 @@ def bubble(in_string):
 
     while p == 0: # haha whoa
         i = 0
+        #goodness_counter = 0 # haha crap, putting it here makes it asplode
         while i < len(lo):
             if lo[i+1] == len(lo):
                 break
@@ -20,7 +21,7 @@ def bubble(in_string):
                 goodness_counter += 1
                 if goodness_counter == len(lo):
                     print lo
-                    p = 1
+                    #p = 1
                     return True
             elif lo[i] > lo[i+1]:
                 smaller = lo[i+1]
