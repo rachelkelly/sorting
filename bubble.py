@@ -15,13 +15,13 @@ def bubble(in_string):
         while i < len(lo):
             if i+1 == len(lo):
                 break
-            if lo[i] < lo[i+1]:
+            if lo[i] <= lo[i+1]:
                 goodness += 1
                 if goodness == (len(lo)-1):
                     print "input string: %s" %in_string
-                    print "sorted output %s" % lo
-                    print "how many passes it took %d " % pass_count
-                    return True # may not need to reset val of p
+                    print "sorted output: %s" % lo
+                    print "how many passes it took: %d " % pass_count
+                    return lo
             elif lo[i] > lo[i+1]:
                 smaller = lo[i+1]
                 bigger = lo[i]
@@ -30,5 +30,3 @@ def bubble(in_string):
             i += 1
             pass_count += 1
 
-bubble('63752841')
-bubble('1111') # this breaks it!!  gotta account for >=/<=
