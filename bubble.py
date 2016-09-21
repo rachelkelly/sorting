@@ -31,5 +31,4 @@ def bubble(in_string):
             pass_count += 1
 
 bubble('63752841')
-
-# do tests outside this file to test speed
+bubble('1111') # this breaks it!!  gotta account for >=/<=
