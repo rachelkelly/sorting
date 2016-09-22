@@ -9,3 +9,16 @@ def merge(in_string):
         lo.append(int(i))
 
     # now to collect them in groups of 2, putting the lower number first
+    i = 0
+    twos = []
+    new = []
+    while i < len(lo):
+        while len(new) < 2:
+             new.append(lo[i])
+        twos.append(new)
+        new = []
+        i += 1
+
+    return twos
+
+merge('36728541')
