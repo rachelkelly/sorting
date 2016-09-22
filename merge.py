@@ -14,11 +14,11 @@ def merge(in_string):
     new = []
     while i < len(lo):
         while len(new) < 2:
-             new.append(lo[i])
+            new.append(lo[i])
+            i += 1 
         twos.append(new)
         new = []
-        i += 1
-
-    return twos
+        # i += 1
+    print twos
 
 merge('36728541')
