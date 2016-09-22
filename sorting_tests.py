@@ -14,6 +14,10 @@ class SortingTests(unittest.TestCase):
         self.assertEqual([1, 2, 3, 4, 5, 6, 7, 8], bubble('63752841'))
         #self.assertEqual('12345678', merge('63752841'))
 
+    def test_odd(self):
+        self.assertEqual([1, 2, 3, 4, 5, 6, 7, 8, 9], bubble('639752841'))
+        #self.assertEqual([], merge(''))
+
     def test_repeat(self):
         self.assertEqual([1, 1, 1, 1], bubble('1111'))
         #self.assertEqual('1111', merge('1111'))
