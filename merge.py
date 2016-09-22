@@ -15,6 +15,11 @@ def merge(in_string):
     while i < len(lo):
         while len(new) < 2:
             new.append(lo[i])
+            # if i == (len(lo)-1): #in an effort to handle odd numbers
+            #    break
+            if len(new) == 2:
+                if new[0] > new[1]:
+                    # comparison like in bubble
             i += 1 
         twos.append(new)
         new = []
