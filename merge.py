@@ -17,7 +17,7 @@ def merge(in_string):
             print "index: %d" %i
             if i == (len(lo)):
                 new[0] = lo[i]
-                i += 1
+                i = (len(lo)+1) # to break the loop
                 #break
             else:
                 new.append(lo[i])
@@ -35,3 +35,4 @@ def merge(in_string):
     print twos
 
 merge('36728541')
+merge('936728641')
