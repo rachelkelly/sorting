@@ -14,16 +14,20 @@ def merge(in_string):
     new = []
     while i < len(lo):
         while len(new) < 2:
-            new.append(lo[i])
-            # if i == (len(lo)-1): #in an effort to handle odd numbers
-            #    break
-            if len(new) == 2:
-                if new[0] > new[1]:
-                    # comparison like in bubble
-            i += 1 
+            if i == (len(lo)-1):
+                new[0] = i
+            else:
+                new.append(lo[i])
+                if len(new) == 2: # now that new is full, we compare
+                    if new[0] > new[1]:
+                        bigger = new[0]
+                        smaller = new[1]
+                        new[0] = smaller
+                        new[1] = bigger
+        #i += 1 
         twos.append(new)
         new = []
-        # i += 1
+        i += 1
     print twos
 
 merge('36728541')
